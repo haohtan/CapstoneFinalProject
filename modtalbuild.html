@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="google-signin-client_id" content="40069760996-m7meg75slq4mhd9kd5hc4lklva6fq2co.apps.googleusercontent.com">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+    
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/navFooter.css">
+        <link rel="stylesheet" href="css/profile.css">
+
+        <script src="https://apis.google.com/js/platform.js?hl=en" async defer></script>
+
+        <title>Trahoo Profile</title>
+    </head>
+    <body style = "background-color: honeydew;">
+        <div class = "modal">
+            <div class = "full-page-cover"></div>
+            <div class = "modal-body">
+                <form class = "modal-form" action="" method="post" enctype="multipart/form-data">
+
+                    <div class = "modal-content">
+                        <div class = "modal-header">
+                            <div class = "close-button-container">
+                                <button type="button" class = "close-button">&#10006;</button>
+                            </div>
+                            <h2>Edit Your Profile!</h2>
+                        </div>
+
+                        <div class = "modal-center">
+                            <!--Names-->
+                            <div class = "input-container">
+                                <h2>Name:</h2>
+                                <label class="input-group-text">First:</label>
+                                <input name="first-name" value='<?php echo $user->getFirst();?>' type="text" aria-label="First name" class="input-name form-control">
+                                <label class="input-group-text">Middle:</label>
+                                <input name="middle-name" value='<?php echo $user->getMiddle();?>' type="text" aria-label="Middle name" class="input-name form-control">
+                                <label class="input-group-text">Last:</label>
+                                <input name="last-name" value='<?php echo $user->getLast();?>' type="text" aria-label="Last name" class="input-name form-control">                               
+                            </div>
+
+                            <!--Birthday-->
+                            <div class="input-container birthday-container">
+                                <span><strong>Date of Birth:  </strong></span>
+                                <input name="birthday" type="date"  value='<?php echo $user->getDOB();?>'min='1899-01-01' max='2020-12-31' class="form-control" style="position: relative;left:40px;">
+                            </div>
+                        
+                            <!--Gener-->
+                            <div class="input-container gender-container d-flex">
+                                <span><strong>Gender:  </strong></span>
+                                <select name="gender-new" class="form-control" style="margin-left: 40px; width:200px;" required>
+                                    <?php
+                                    $genderOptions = "";
+                                    $genderList = array("Other","Male","Female");
+                                    for ($i = 0;$i < 3; $i++){
+                                        if ($user->getGender() == $i) $genderOptions .= "<option value=".$i." selected>".$genderList[$i]."</option>";
+                                        else $genderOptions .= "<option value=".$i.">".$genderList[$i]."</option>";
+                                    }
+                                    echo $genderOptions;
+                                    ?>
+                                </select>
+                            </div>
+
+                            <!--Phone number-->                
+                            <div class="input-container phone-container">
+                                <span><strong>Phone Number:  </strong></span>
+                                <input type="tel" id="phone" value="<?php echo $user->getPhone();?>" name="phone-new" class="form-control" style="width:60%;text-align: center;"placeholder="123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+                            </div>
+
+                            <!--Privacy Setting-->
+                            <div class="input-container privacy-container">
+                                <span><strong>Privacy Setting:  </strong></span>
+                                <select name="privacy-new" class="form-control" id="inputGroupSelect01" >
+                                <?php
+                                    $privacyOptions = "";
+                                    $privacyList = array("Private","Public","Followers Only");
+                                    for ($i = 0;$i < 3; $i++){
+                                        if ($user->getPrivacy() == $i) $privacyOptions .= "<option value=".$i." selected>".$privacyList[$i]."</option>";
+                                        else $privacyOptions .= "<option value=".$i.">".$privacyList[$i]."</option>";
+                                    }
+                                    echo $privacyOptions;
+                                    ?>
+                                </select>
+                            </div>
+                            <!--Description-->
+                            <div class="input-container description-container">
+                                <span><strong>Description:  </strong></span>
+                                <textarea name="description-new"  class="form-control" aria-label="With textarea"><?php echo $user->getSign();?></textarea>
+                            </div>
+
+                            <div class="input-container file-container">
+                                <h2>Files Upload</h2>
+                                <label class="" id="inputGroup-sizing-default">Background:</label>
+                                <input  name="background-image" type="file"  accept="image/*"  class="form-control" style="position:relative; left:183px;">
+                                <br><label class="" id="inputGroup-sizing-default">Avatar:</label>
+                                <input name="avatar-image" type="file" accept="image/*"  class="form-control" style="position:relative; left:222px;"> 
+                                <br><label class="" id="inputGroup-sizing-default">Update your Verification:</label>
+                                <input name="verification-new" accept="image/*"  type="file" class="form-control" >
+                            </div>
+                        </div>
+
+                        
+
+                        <div class = "modal-footer">
+                            <div class= "footer-buttons">
+                                <button type="button" class="button cancel-button" >Cancel</button>
+                                <button type="submit" name="submit" class="button submit-button">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
