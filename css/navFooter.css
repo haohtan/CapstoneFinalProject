@@ -1,0 +1,91 @@
+.attar{/*avatar*/
+    padding-top: inherit;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    position:relative;
+    top:10px;
+    margin-right: 10px;
+}
+
+.full-page-cover{
+    position:fixed;
+    top:0px;
+    height:100%;
+    width:100%;
+    background-color:rgba(0, 0, 0, 0.274);
+    z-index:10000 !important;
+}
+
+.login-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+
+	position: fixed;
+    top: 50%;
+    bottom: 0;
+	left: 0;
+	right: 0;
+    margin: auto;    
+    transform: translateY(-50%);
+
+    width: 500px;
+    height: 250px;
+    border-radius:7px;
+    max-width: none;
+    padding-top: 0px;
+    bottom: auto;
+    background: white;
+    vertical-align: middle;
+    
+    z-index:10000 !important;
+
+}
+
+.login-box h2{
+    text-align:center;
+    font-size:36px;
+}
+
+.login-box p{
+    text-align:center;
+    font-size:15px;
+}
+
+.login-box button{
+    margin:0 auto !important;
+
+}
+
+.googlelog2{
+    background:transparent  url("/imgs/btn_google_signin_light_normal_web.png") fixed no-repeat top !important;
+    background-size:cover;
+    background-repeat:no-repeat;
+    border:none;
+    width:191px;
+    height:46px;
+   
+}
+
+.googlelog2:focus{
+    background-image:url("/imgs/btn_google_signin_light_pressed_web.png");
+
+}
+
+.googlelog2:hover{
+    background-image:url("/imgs/btn_google_signin_light_focus_web.png");
+    cursor:pointer;
+}
+
+.g-signin2{
+    display:flex;
+    justify-content: center;
+    background-color:white;
+    border:none;
+}
+
+.g-signin2:focus{
+    outline:0;
+}

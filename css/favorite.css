@@ -1,0 +1,121 @@
+.btn-trahoo {
+    background: #00CED1;
+    color: white
+}
+body{
+    /*padding-top: 138px;*/
+    padding-top: 118px;
+}
+img{
+    max-width: none;
+}
+
+h2 {
+    font-size: 30px;
+    font-style: italic;
+    margin-left: 3%;
+}
+
+/*favorite tag*/
+.fav_all{
+    left:50%;
+    position: relative;
+    width:1420px;
+    transform: translate(-50%,0);
+    padding-left: 50px;
+    padding-right:50px;
+    background-color: lightcyan;
+    height:1250px;
+}
+.fav_tag{
+    background-color: lightpink;
+    border-style: dashed;
+    border-color: chocolate;
+    border-width: 5px;
+    height: 570px;
+    overflow-y: auto;
+    border-radius: 25px;
+    padding:15px;
+}
+.fav_tag_each{
+    position: relative;
+    float: left;
+    margin: 15px 30px 15px 30px;
+}
+.fav_tag_img{
+    width:250px;
+    height:190px;
+}
+.fav_tag_content{
+    position: absolute;
+    max-width: 75%;
+    font-size: 20px;
+    text-align: center;
+    top: 25%;
+    left: 15%;
+    color: snow;
+    text-shadow: black 1px 0 10px;
+}
+
+/*favorite post*/
+.fav_post {
+    background-color: lightblue;
+    border-style: dashed;
+    border-color: mediumblue;
+    border-width: 5px;
+    max-height: 540px;
+    border-radius: 25px;
+    padding-left: 30px;
+    overflow-y: auto;
+}
+.fav_post_each{
+    position: relative;
+    float: left;
+    margin: 20px 6px 30px 6px;
+    width:293px;
+    height: 365px;
+    border-radius: 15px;
+    padding: 22px 16px 22px 16px;
+    border-style: dotted;
+    background:rgba(255,255,255,.4);
+    border-top-style: double;
+    border-right-style: groove;
+    border-bottom-style: double;
+    border-left-style: solid;
+    border-color: cadetblue;
+    border-width: 4px;
+}
+.fav_post_title{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.fav_post_dt{
+    font-size: 14px;
+    float: right;
+    padding-bottom: 10px;
+}
+.fav_post_img{
+    height: 180px;
+    width: 255px;
+    /*padding-left: 15px;*/
+}
+
+/*google map*/
+.trahoo-modal{
+    padding:15px;
+    box-sizing:border-box;
+    width:900px;
+    left:12vw;
+    border-radius:15px;
+    top:20vh;
+    position:absolute;
+    background:white;
+    min-height:430px;
+    z-index:999999;
+}
+
+/*footer*/
+.container{
+    margin:0;
+}
